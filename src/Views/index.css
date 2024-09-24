@@ -1,0 +1,566 @@
+/* Reseteo general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    width: 100vw; /* Se asegura de que use todo el viewport width (ancho completo del navegador) */
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: #151515;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Header sticky en la parte superior */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    color: red;
+}
+
+.logo {
+    width: 100px;
+}
+
+/* Botones de autenticación */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.auth-buttons button:hover {
+    background-color: darkred;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    background: url("https://wallpapers.com/images/hd/superhero-collage-7ukc469bvedydfr9.jpg");
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.banner-content {
+    z-index: 1;
+    max-width: 800px;
+}
+
+.banner h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Mejora la legibilidad */
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.read-more, .stream-now {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover, .stream-now:hover {
+    background-color: darkred;
+}
+
+/* Sección de casas publicadoras */
+.casaspu {
+    background-color: #eaeaea; /* Gris claro suave */
+    padding: 20px;
+    text-align: center;
+}
+
+
+.casaspu h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.casaspu a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    color: #e23636;
+    background-color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.casaspu a:hover {
+    background-color: #e23636;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #151515;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.footer-links a:hover {
+    color: red;
+}
+
+/* Estilos adicionales */
+h1.hero-title {
+    color: #e23636; /* Color típico de Marvel */
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+ul.hero-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto; /* Centrar la lista */
+}
+
+li.hero-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+li.hero-item:nth-child(odd) {
+    background-color: #e9ecef;
+}
+
+li.hero-item:hover {
+    background-color: #dcdcdc;
+}
+
+@media (max-width: 768px) {
+    h1.hero-title {
+        font-size: 2rem;
+    }
+
+    li.hero-item {
+        font-size: 1rem;
+    }
+}
+
+#main-body {
+    padding-bottom: 40px;
+    background-color: #ffffff;
+}
+
+#hero-script {
+    display: none;
+}
+/*ESTILOS PARA EL FORMULARIO */
+.add-hero {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Hace que la sección ocupe toda la altura de la ventana */
+    background-color: #f5f5f5; /* Color de fondo opcional */
+}
+
+.add-hero form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Limitar el ancho del formulario */
+}
+
+.add-hero label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.add-hero input, 
+.add-hero select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-hero button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-hero button:hover {
+    background-color: #218838;
+}
+.add-hero h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*estilos para female y male*/
+/* Hero Container Styles */
+.hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Hero Card Styles */
+.hero-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hero-card p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Button Styles */
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-card {
+        width: 100%;
+    }
+}
+
+/* Estilo del botón de eliminar */
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    margin-left: 10px; /* Separar un poco del botón editar */
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+/*estilos para la seccion de genero*/
+.gender {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    margin: 20px auto; /* Centra la sección verticalmente */
+}
+
+.gender h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.gender a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.gender a:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilo para las secciones de género y alineación */
+
+/* Títulos estilizados */
+section h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los enlaces */
+section a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #007bff; /* Color primario */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover para los enlaces */
+section a:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Estilo para la clase gender */
+.gender {
+    background-color: #e0f7fa;
+}
+
+
+.alignment {
+    text-align: center;
+    padding: 20px;
+    background-color: #fce4ec;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alignment h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los enlaces */
+.alignment a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #007bff; /* Color primario */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover para los enlaces */
+.alignment a:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 600px) {
+    .alignment a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .alignment {
+        padding: 15px;
+    }
+
+    .alignment h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.h1body{
+    text-align: center;
+}
+
+.heroacademy{
+    color: #ccc;
+}
+
+/*estilos formulario*/
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+option {
+    font-size: 16px;
+}
